@@ -42,7 +42,7 @@ jobs:
             cp Dockerfile.production Dockerfile
             docker build -t bekaza/example-nodejs-circle:latest .
             docker build -t bekaza/example-nodejs-circle:${CIRCLE_SHA1} .
-            docker push bekaza/example-nodejs-circle:latest .
-            docker push bekaza/example-nodejs-circle:${CIRCLE_SHA1} .
+            docker push bekaza/example-nodejs-circle:latest
+            docker push bekaza/example-nodejs-circle:${CIRCLE_SHA1}
       
       - run: echo Done
