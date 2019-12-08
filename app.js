@@ -43,4 +43,13 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+var apm = require('elastic-apm-node').start({
+  // Set required service name (allowed characters: a-z, A-Z, 0-9, -, _, and space)
+  serviceName: 'node-webinterface',
+  // Use if APM Server requires a token
+  secretToken: '',
+  // Set custom APM Server URL (default: http://localhost:8200)
+  serverUrl: 'https://apmnaja:8200'
+})
+
 module.exports = app;
