@@ -113,11 +113,11 @@ workflows:
             - build
       - ship:
           requires:
-            - build
             - test
-      - deploy:
-          # type: approval
+      - hold:
+          type: approval
           requires:
-            - build
-            - test
             - ship
+      - deploy:
+          requires:
+            - hold
